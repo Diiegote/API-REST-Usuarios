@@ -47,10 +47,10 @@ def leer_usuario(id):
 @app.route("/usuarios", methods=["POST"])
 def registrar_usuarios():
     try:
-        cursor = conexion.connection.cursor()
+        cursorr = conexion.connection.cursor()
         sql = """INSERT INTO usuarios (name,username,email)
        VALUES ('{0}','{1}','{2}')""".format(request.json['name'],request.json['username'],request.json['email'])
-        cursor.execute(sql)
+        cursorr.execute(sql)
         conexion.connection.commit()
         return jsonify("Usuario registrado")
 
